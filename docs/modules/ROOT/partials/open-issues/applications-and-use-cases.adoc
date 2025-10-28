@@ -1,0 +1,6 @@
+=== Applications and use cases
+
+There are many potential and general use cases that will warrant further user research and design recommendation to understand the needs of actors using CAWG assertions or consuming them.
+Additional use cases include topics like support for multiple actors and displaying chosen names instead of verified ones.
+Unlike C2PA assertions that disclose immutable information about how an asset was created or edited, identity information may be thought of more fluidly. 
+Considerations for enabling mutability for identity assertions should be explored, allowing human actors to maintain maximum control over how they express themselves and preferences for their content.

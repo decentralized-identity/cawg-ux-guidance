@@ -1,0 +1,3 @@
+=== User research
+
+Correctly identifying and displaying trust signals is of paramount concern for our overall user experience. CAWG and C2PA strive to understand the value consumers will apply to content attribution through ongoing user research studies and usability testing.

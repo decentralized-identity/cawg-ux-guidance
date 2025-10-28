@@ -1,0 +1,14 @@
+=== Additional identity claims
+
+.Example of an individual named actor’s identity claims aggregation within a C2PA Manifest display
+image::patterns/additional-identity-claims.jpg[]
+
+CAWG identity assertions can include linked social profiles and websites as secondary trust signals.
+When verified through OAuth or DNS validation, these links should inherit verified user interface treatment. 
+
+When manually entered, they must be clearly labeled as referenced or unverified.
+For example, actors may describe their relationship to an asset using standardized roles such as creator, editor, publisher, etc.
+Because this is a self-attested assertion, it’s important to distinguish this from other verifiable identity information. 
+
+Implementers should align with each verification badging and verification conventions to preserve familiarity and ensure audiences interpret trust signals consistently.
+Consistent terminology promotes interoperability and helps audiences understand each contributor’s involvement. 

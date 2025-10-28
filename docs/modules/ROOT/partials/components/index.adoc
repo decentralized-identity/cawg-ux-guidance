@@ -1,0 +1,7 @@
+== Components
+
+include::verification-indicators.adoc[]
+
+include::linked-identity-claims.adoc[]
+
+include::validation-states.adoc[]

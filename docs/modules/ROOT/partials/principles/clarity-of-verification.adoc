@@ -1,0 +1,5 @@
+=== Clarity of verification
+
+Implementations should communicate verification status and issuer relationships clearly to help audiences assess credibility.
+When identity is backed by a trusted certificate authority, implementers should disclose who verified the information, the verification method, and the corresponding root of trust.
+Manually entered or unverified information must be labeled accordingly.

@@ -1,0 +1,22 @@
+=== Verification type and status
+
+Verification is a core differentiator in identity-based Content Credentials.
+Verified identities are generally considered more trustworthy than self-asserted or manually entered names.
+Implementers should make verification states explicit through clear labeling and iconography. 
+
+==== Identity claims aggregation
+
+Verification may occur directly through a credential issuer or indirectly through an https://cawg.io/identity/1.1/#_identity_claims_aggregation[identity claims aggregator], a trusted intermediary that collects and validates identity signals from multiple sources, such as verified websites, social accounts, government ID providers, professional accreditors, or organizational affiliations.
+
+Aggregators re-express these identity signals on the actor’s behalf, binding them to a specific C2PA asset without requiring the actor to issue a direct signature.
+
+User interfaces should make it clear when verification is derived from aggregated attestations rather than directly from the actor or issuer. Phrases such as “Verified by [Identity Provider]” or “Attested by [named actor]” help C2PA Manifest consumers interpret the relationship between the actor, the aggregator, and the verification sources.
+
+==== Verification methods
+
+Different verification methods may contribute to an actor’s aggregated identity. Common examples include verifying a government-issued ID, confirming control of a social-media account via OAuth, or proving domain ownership through DNS configuration.
+
+Verification always occurs outside the C2PA Manifest-creation process, and participation is always opt-in.
+Creators must retain full control over whether to include verified identity information in their Content Credentials based on their privacy preferences.
+
+Providing additional brief contextual information about the verification method, such as its type or source, helps C2PA Manifest consumers make informed judgments about trustworthiness, especially in L3 disclosures where additional detail can be displayed.

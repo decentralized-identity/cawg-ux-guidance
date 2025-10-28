@@ -1,0 +1,33 @@
+=== Individual and organizational identity
+
+CAWG identity assertions represent named actors, which can include human individuals and organizations.
+Implementers should distinguish these cases clearly and present them in ways that reflect their differing trust models and verification paths.
+
+==== Individual identity
+
+.Example of an individual named actor and their (optional) role in an identity assertion within a C2PA Manifest display
+image::patterns/individual-named-actor.jpg[]
+
+An individual identity represents a single human named actor, such as a photographer, designer, or writer.
+Individual identities may include verified names, social profiles, or website links.
+Because this information often contains personally identifiable data, user consent and visibility controls are essential during the C2PA signing workflow.
+Implementers must allow the actor to opt in to each element before Manifest signing and provide clear options to review or remove information prior to publication.
+
+When displayed, individual identities should use consistent labeling to indicate the verification source and, where relevant, link to additional supporting contexts.
+Examples of such contexts include professional accreditations, organizational affiliations, verified social media accounts, or other web-based sources that help substantiate the named actor’s identity claims.
+
+==== Organizational identity
+
+.Example of an organizational named actor and their (optional) role in an identity assertion within a C2PA Manifest display
+image::patterns/organizational-named-actor.jpg[]
+
+Organizations and institutions with established, publicly-recognizable branding can benefit from CAWG identity displays, as defined by the https://cawg.io/identity/1.1/#_x_509_certificates_and_cose_signatures[X.509 section] of the CAWG identity assertion.
+Similar to individuals, organizations who are verified by a trusted certificate authority can sign their own Content Credentials.
+
+The display of trusted organizational identity will vary depending on the trust lists that are configured by each verifier.
+Verifiers are encouraged to use well-established trust lists such as EUTL and AATL to provide a shared basis for trust. Verifiers are also advised to adopt reputable industry-specific trust lists, such as https://iptc.org/verified-news-publishers-list/[IPTC’s Origin Verified Publisher list], where available and to link out to supporting contexts.
+
+NOTE: TO DO: Replace EUTL and AATL references with updated guidance.
+
+Organizational identities may include data such as company name, verified domain, or issuing authority.
+Implementers should display this information clearly, often alongside a logo or verified mark, and maintain consistent visual hierarchy across progressive disclosures.
