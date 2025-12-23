@@ -1,0 +1,13 @@
+=== Metadata assertions
+
+.Examples of self-declared metadata assertions
+image::patterns/metadata-assertion.jpg[]
+
+https://cawg.io/metadata/1.2-draft/[CAWG metadata assertions] can be included in an interface display, preferably in as a referenced assertion and attested to by a named actor.
+This provides for the inclusion of information in a C2PA Manifest of assertions like an asset title, license, media identifiers, or any field referenced from standards such as XMP, IPTC, or Exif.
+
+Metadata assertions are usually provided by the actor themselves, but they can also include information verified by another trusted party.
+When metadata is not attributed to the signer of the C2PA manifest, it should be treated as a referenced assertion within the CAWG identity section.
+Implementers should clearly show the difference between self-declared and verified metadata so that manifest consumers can understand which information is more trustworthy.
+
+Metadata information should appear in a distinct section, visually separate from verified identity and C2PA provenance data. 

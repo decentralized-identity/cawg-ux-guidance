@@ -1,0 +1,11 @@
+== Principles
+
+CAWG UX recommendations adhere to the same foundational principles outlined in the https://spec.c2pa.org/specifications/specifications/2.0/ux/UX_Recommendations.html[C2PA User Experience Guidance for Implementers] and extend them with CAWG-specific considerations.
+
+include::hierarchy-of-trust.adoc[]
+
+include::user-control-and-consent.adoc[]
+
+include::clarity-of-verification.adoc[]
+
+include::consistency-with-c2pa-ux.adoc[]

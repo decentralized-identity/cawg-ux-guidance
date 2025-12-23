@@ -1,0 +1,4 @@
+=== Consistency with C2PA UX
+
+CAWG implementations should maintain parity with the overall https://c2pa.org/specifications/specifications/2.0/ux/UX_Recommendations.html[C2PA UX guidance].
+Terminology, progressive disclosure levels, and interaction models should align to ensure users experience Content Credentials consistently across implementations and contexts.

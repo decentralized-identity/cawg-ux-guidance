@@ -1,0 +1,17 @@
+=== Linked identity claims
+
+==== Social media links
+
+When a named actor has aggregated identity claims, implementers should consider reinforcing the legitimacy of those connections by using the appropriate platform logo or iconography.
+If a named actor is connected through OAuth or equivalent verification, the user interface could display pre-existing verifications.
+Tooltips should clarify the verification method and platform relationship.
+
+If aggregated claims are manually entered, the user interface must label them as unverified, through labeling, iconography, or both. 
+
+==== Website links
+
+Websites can be verified through DNS CNAME or TXT records, and should appear with a verification indicator or label to indicate the status accordingly.
+Links should open securely and follow standard accessibility and privacy conventions.
+
+Unverified links must be visually distinct and clearly identified as unverified. 
+Implementers may choose to render unverified links as non-interactive text to introduce intentional friction and reduce the risk of misleading attribution. 

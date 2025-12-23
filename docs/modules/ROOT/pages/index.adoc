@@ -7,7 +7,7 @@
 
 include::partial$abstract.adoc[]
 
-*Version 1.0 Draft 27 October 2025* · xref:_version_history[]
+*Version 1.0 Draft 23 December 2025* · xref:_version_history[]
 
 include::partial$common/license.adoc[]
 
@@ -15,6 +15,18 @@ include::partial$common/contributing.adoc[]
 
 include::partial$common/foreword.adoc[]
 
-// include::partial$profile.adoc[]
+include::partial$common/toc.adoc[]
+
+include::partial$introduction.adoc[]
+
+include::partial$principles/index.adoc[]
+
+include::partial$patterns/index.adoc[]
+
+include::partial$components/index.adoc[]
+
+include::partial$open-issues/index.adoc[]
+
+include::partial$public-review-feedback-evolution.adoc[]
 
 include::partial$version-history.adoc[]

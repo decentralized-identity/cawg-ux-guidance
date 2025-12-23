@@ -1,0 +1,16 @@
+=== C2PA information hierarchy
+
+CAWG identity assertions should appear as a distinct group within a C2PA Manifest display, separate from general C2PA assertions.
+Within this section, verified identities should be presented before referenced or self-declared identities to establish a clear hierarchy of trust across the levels of progressive disclosures. 
+
+.Examples of different levels of informational progressive disclosures
+image::patterns/progressive-disclosure.jpg[]
+
+Identity information should follow the progressive disclosure model established by the https://spec.c2pa.org/specifications/specifications/2.0/ux/UX_Recommendations.html#_levels_of_information_disclosure[C2PA UX progressive disclosure] framework:
+
+* *Level 1 (L1)*: Consideration should be given to displaying organizational identity, whereas individual identity data may be omitted to preserve brevity.
+* *Level 2 (L2)*: Surfaces verified identity with concise attribution and, where space allows, the actor’s primary role.
+* *Level 3 (L3)*: Expands to include detailed verification information, issuer relationships, verification methods, and root-of-trust references.
+
+Hierarchy should be applied both across disclosure levels and within the identity section itself, ensuring that verified identities are visually and semantically distinct from referenced ones.
+When multiple actors are associated with an asset, roles and trust levels should determine their order of presentation.

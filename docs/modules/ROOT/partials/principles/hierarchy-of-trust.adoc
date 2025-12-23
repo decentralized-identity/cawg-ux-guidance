@@ -1,0 +1,8 @@
+=== Hierarchy of trust
+
+Research consistently shows that identity is one of the strongest trust signals audiences look for when evaluating content.
+CAWG identity assertions should be easy to locate, clearly understandable, and visually distinct from other provenance information in a C2PA Manifest. 
+
+Not all identity assertions hold the same level of verifiability.
+Likewise, not all C2PA implementers will choose to display identity information, even if present in a C2PA Manifest.
+Therefore, verified identities should be surfaced prominently within https://spec.c2pa.org/specifications/specifications/2.0/ux/UX_Recommendations.html#_levels_of_information_disclosure[progressive disclosure interfaces (L1-L3)] and visually differentiated from referenced or self-declared information. Hierarchy within the identity section helps establish clarity and confidence.

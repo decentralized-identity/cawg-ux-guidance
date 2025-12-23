@@ -1,0 +1,22 @@
+=== Verification indicators
+
+==== Verification icons
+
+Verification icons are compact visual indicators that represent an actor’s verification state.
+They should appear adjacent to the actor’s name and include accessible text or tooltips describing the credential issuer and verification details.
+
+A visual symbol or label may indicate that a creator’s identity has been verified and should, when space allows, include information about the verification process and verifier.
+
+Unverified identities, such as names manually entered in metadata assertions, must not display a verification symbol.
+These should be grouped and labeled to clearly distinguish verified from unverified identity assertions.
+
+==== Status labels
+
+Textual descriptors such as “Verified by [credential issuer]” or “Verification revoked by [credential issuer]” provide immediate clarity.
+Labels should be concise, localizable, and follow the tone and casing conventions used throughout the C2PA UX framework.
+
+==== Warning states
+
+When identity credentials are revoked, expired, or untrusted, the indicator should shift to a clear warning or neutral state accompanied by a plain-language explanation of the issue.
+Verification indicators must be perceivable to assistive technologies.
+Color alone must not be used to convey meaning.

@@ -1,0 +1,6 @@
+=== Validation states
+
+Verification status may change over time.
+When validation fails due to credential expiration, issuer revocation, or trust-chain issues, the user interface must present a clear message explaining the current status and, when possible, link to issuer or verifier details.
+
+Messages should use plain language and appear within the context of the identity section rather than as a global error.

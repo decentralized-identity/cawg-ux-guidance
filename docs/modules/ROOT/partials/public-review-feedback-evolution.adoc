@@ -1,0 +1,6 @@
+== Public review, feedback, and evolution
+
+Developing these recommendations is an ongoing process that involves diverse stakeholders, with the results balancing uniformity and familiarity with utility and flexibility for users across contexts, platforms, and devices. 
+
+Feedback, review, user testing, and ongoing evolution is a key requirement for success.
+The recommendations will therefore be provided in an evolving, companion document, informed by real world experiences deploying CAWG-enabled C2PA Manifests across a wide variety of applications and scenarios. 

@@ -1,0 +1,4 @@
+=== User control and consent
+
+Representing individual human and organizational identity enhances the value of Content Credentials in many contexts but also introduces sensitivity around privacy.
+Actors must be informed of any personally identifiable information included in their Content Credentials and provided the option to add, remove, or decline inclusion prior to Manifest signing.

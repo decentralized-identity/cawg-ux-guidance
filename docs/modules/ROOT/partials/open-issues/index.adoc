@@ -1,0 +1,5 @@
+== Open issues
+
+include::user-research.adoc[]
+
+include::applications-and-use-cases.adoc[]

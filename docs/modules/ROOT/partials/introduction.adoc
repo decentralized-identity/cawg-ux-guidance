@@ -1,0 +1,11 @@
+== Introduction
+
+The https://cawg.io/[Creator Assertion Working Group (CAWG)] provides identity-based recommendations for implementers of https://c2pa.org/[Coalition for Content Provenance and Authenticity (C2PA)] user experiences (UX).
+Similar to the https://spec.c2pa.org/specifications/specifications/2.0/ux/UX_Recommendations.html[C2PA User Experience Guidance for Implementers], this document defines best practices for presenting CAWG identity assertions within a C2PA Manifest.
+
+CAWG UX recommendations describe standard, recognizable experiences that:
+
+* Provide a named actor a means to express individual or organizational identity assertions about a C2PA asset, and
+* Provide C2PA Manifest consumers with clear, trustworthy information about who is involved in the asset’s creation and modification.
+
+By following these guidelines, implementers can help ensure that identity-related information is represented consistently, transparently, and in a way that enhances trust in the overall provenance experience.
