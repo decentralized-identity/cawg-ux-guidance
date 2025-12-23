@@ -3,6 +3,6 @@
 
 _This section is non-normative._
 
-*27 October 2025*
+*23 December 2025*
 
-* Placeholder for working draft.
+* Initial draft.
