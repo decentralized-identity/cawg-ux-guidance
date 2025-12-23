@@ -1,1 +1,4 @@
-TO DO: Provide abstract
+This document offers UX recommendations for presenting CAWG identity information within C2PA provenance experiences.
+Building on existing C2PA UX guidance, it shares principles and patterns for clearly and consistently surfacing individual and organizational identity assertions in ways that support user trust.
+It also outlines trust hierarchies, approaches to communicating verification status, and visual and interaction patterns for displaying identity information within Content Credentials interfaces.
+This guidance is designed to help users better understand who contributed to an asset and how, while respecting privacy and staying aligned with the broader C2PA UX framework.
