@@ -6,3 +6,7 @@ _This section is non-normative._
 *23 December 2025*
 
 * Initial draft.
+
+*14 January 2026*
+
+* Working group approved.
