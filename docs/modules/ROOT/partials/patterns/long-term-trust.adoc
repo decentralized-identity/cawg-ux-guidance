@@ -1,0 +1,62 @@
+=== Long-term trust and point-in-time evaluation
+
+An identity assertion captures a moment in time: the credential holder's relationship to a C2PA asset at the moment of signing.
+Trust should always be evaluated relative to that moment, not relative to when a user views the content.
+
+The https://cawg.io/identity/1.3/[CAWG identity assertion specification] is explicit on this point: credential validity is compared against the signing timestamp, not the current date and time.
+This has direct implications for how trust is displayed and how changes that occurred after signing are communicated to users.
+
+==== Anchor trust display to the signing timestamp
+
+Trust status displays should always make clear when trust was established.
+A label such as "Identity verified — issuer trusted" implies a live, current status without temporal context.
+Anchoring it to the signing date makes clear this is a historical claim, not a live check.
+
+* At L2: include the signing date alongside the trust label — for example, "Identity verified as of [signing date]."
+* At L3: display both the signing date and the individual verification date (the `verifiedAt` field) for each identity signal in the credential.
+
+This anchoring is especially important for long-lived assets such as photographs or articles that may circulate for years after they were signed.
+
+==== Social accounts, websites, and other identity signals
+
+Individual identity signals captured in a credential — such as a verified social media account or a confirmed website — each carry a `verifiedAt` timestamp recording when that relationship was confirmed.
+These signals should be displayed with their verification date, not a live status.
+
+If a social account no longer exists or a website has been taken down at the time of viewing, this does not invalidate the assertion.
+Implementations should:
+
+* Show each identity signal as it was verified, with the associated `verifiedAt` date.
+* Not attempt to re-verify signals in real time or display a warning based on their current unavailability.
+* Not imply the content was produced under false pretenses because a linked account or website no longer exists.
+
+==== Credentials expired after signing
+
+A credential that expired after the time of signing is not the same as a credential that was revoked.
+Expiry is a routine administrative event that does not mean the credential was invalid when the identity assertion was created.
+
+When a credential has expired since signing, implementations should:
+
+* Evaluate trust against the signing timestamp. If the credential was valid at signing, the trust evaluation outcome (Trusted or Well-formed) should reflect that.
+* Optionally note the post-signing expiry using a secondary label such as "Credential has since expired" — positioned below the primary trust label and displayed in a neutral style, not a warning.
+* Not use the Revoked state. Expiry and revocation are distinct events; conflating them misrepresents the situation to users.
+
+NOTE: Some validators may only be able to check current revocation status rather than historical status at signing time. If a validator cannot determine the revocation status as of the signing timestamp, the appropriate response is to treat the credential as having an unknown status for that check, not to treat it as revoked.
+
+==== Revocation, expiration, and unavailability compared
+
+[cols="1,2,1", options="header"]
+|===
+| Scenario | What it means | Recommended display
+
+| Credential revoked at or before signing time
+| The issuer explicitly invalidated the credential before the assertion was created. This is a meaningful signal of potential bad faith or key compromise.
+| Warning state: "Identity credential was revoked"
+
+| Credential expired after signing
+| The credential's validity period ended after the assertion was created. This is routine and does not affect the assertion's validity at signing time.
+| Trusted or Well-formed (as evaluated at signing time), with optional neutral note "Credential has since expired"
+
+| Credential or signal unavailable now
+| The validator cannot reach the issuer, resolve a DID document, check a revocation list, or confirm a social account. The current status is unknown.
+| Neutral informational state: "Identity could not be verified — network access required"
+|===

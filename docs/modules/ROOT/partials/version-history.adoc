@@ -14,3 +14,8 @@ _This section is non-normative._
 *05 February 2026*
 
 * Ratified by DIF Steering Committee.
+
+*02 July 2026*
+
+* Updated validation states to establish that trust is a point-in-time evaluation relative to the signing timestamp, and to distinguish credential revocation, post-signing expiration, and current unavailability as three scenarios requiring different UX treatment.
+* Added new pattern: Long-term trust and point-in-time evaluation, covering timestamp anchoring at L2 and L3, display of social accounts and websites using the verifiedAt field, handling of credentials expired after signing, and a comparison table of revocation, expiration, and unavailability.

@@ -1,6 +1,16 @@
 === Validation states
 
-Verification status may change over time.
-When validation fails due to credential expiration, issuer revocation, or trust-chain issues, the user interface must present a clear message explaining the current status and, when possible, link to issuer or verifier details.
+Trust in an identity assertion is a point-in-time evaluation: it reflects whether the credential was valid at the moment of signing, not whether it is valid at the moment of viewing.
+The https://cawg.io/identity/1.3/[CAWG identity assertion specification] is explicit on this point — credential validity is compared against the signing timestamp.
 
+When displaying validation status, implementations must distinguish between three scenarios that are often conflated but have meaningfully different implications:
+
+Revocation:: The issuer explicitly invalidated the credential at or before signing time. This is a meaningful signal and should be communicated using a warning indicator.
+
+Expiration after signing:: The credential's validity period ended after the assertion was created. This is a routine administrative event and does not affect the validity of the assertion at signing time. It should not be displayed as a warning or treated as equivalent to revocation.
+
+Unavailability:: The validator cannot reach the credential issuer, resolve a DID document, or check revocation status at the current time. The status is unknown, not bad. This should be displayed as a neutral informational state.
+
+When validation fails due to revocation or unresolvable trust-chain issues, the user interface must present a clear message explaining the current status and, where possible, link to issuer or verifier details.
 Messages should use plain language and appear within the context of the identity section rather than as a global error.
+See also xref:_long_term_trust_and_point_in_time_evaluation[Long-term trust and point-in-time evaluation] for guidance on displaying trust for assets viewed long after signing.

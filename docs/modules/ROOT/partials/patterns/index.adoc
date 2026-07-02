@@ -4,6 +4,8 @@ include::c2pa-information-hierarchy.adoc[]
 
 include::verification-type-and-status.adoc[]
 
+include::long-term-trust.adoc[]
+
 include::individual-and-organizational-identity.adoc[]
 
 include::additional-identity-claims.adoc[]
