@@ -1,0 +1,57 @@
+=== Explaining why an identity is trusted
+
+Governance trust depends on more than a valid cryptographic signature.
+It reflects whether the identity assertion consumer trusts how the credential was issued, how it was managed, and how the credential issuer came to be recognized — for example, by appearing on a published trust list governed by an authoritative body.
+
+Displaying this reasoning helps users make informed judgments rather than asking them to accept a "verified" label on faith.
+The depth of detail provided at each stage should follow the progressive disclosure model.
+
+==== Level 2: Summary trust statement
+
+At L2, the interface should surface a concise statement that names the credential issuer and, where a trust list is the basis for the trust decision, names the trust list as well.
+
+Examples:
+
+* "Identity verified by Example Identity Provider"
+* "Trusted through IPTC Origin Verified Publisher List"
+
+This gives users the essential context — who verified the identity and under what authority — without requiring them to interpret a full trust chain.
+
+If no trust list entry is present, the summary should instead reflect the Well-formed outcome: the identity is present but the issuer is not recognized by this viewer's trust configuration.
+See xref:_validation_states[Validation states] for recommended labels.
+
+==== Level 3: Full trust path
+
+At L3, the interface should expand to show the complete set of fields that explain the basis for the trust decision.
+Implementations should present these in a structured format such as a detail panel or expandable section.
+
+[cols="1,2", options="header"]
+|===
+| Field | Example value
+
+| Named actor
+| Jane Smith
+
+| Credential issuer
+| Example Identity Provider
+
+| Trust list
+| IPTC Origin Verified Publisher List
+
+| Verification path
+| Issuer → Trust list → Viewer trust configuration
+
+| Revocation status
+| Not revoked at signing time
+
+| Time of evaluation
+| Checked against signing timestamp
+|===
+
+The verification path field makes explicit that trust is verifier-relative: the chain runs from the credential issuer, to the trust list, to this specific viewer's trust configuration.
+Implementations should present the path in language readable to non-technical users.
+Raw OIDs, DID strings, or certificate fingerprints should not appear in the primary display; they may be available on further request for technical users.
+
+If no trust list entry is present, the trust list and verification path fields should either be omitted or replaced with a neutral label such as "Issuer not recognized by this viewer" — consistent with the Well-formed outcome.
+
+NOTE: The time of evaluation should be expressed relative to the signing timestamp, not the current time. Trust is evaluated as of the moment the identity assertion was created, not at the moment a user views the content. This distinction matters because credentials may have expired or been revoked after signing.
