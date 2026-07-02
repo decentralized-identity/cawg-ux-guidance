@@ -1,0 +1,31 @@
+=== Governance trust and trust registries
+
+_Governance trust_ reflects confidence in how a credential was issued and managed.
+It is distinct from technical trust (whether the signature is cryptographically valid) and from reputation trust (whether the named actor is personally trustworthy).
+
+When a CAWG identity assertion includes a reference to a https://cawg.io/identity/1.3/#_trust_registry_requirements[trust registry], the named actor is claiming recognition by a governing authority operating under a published governance framework.
+This is an additional trust signal beyond the cryptographic signature itself.
+
+==== Displaying governance trust
+
+When a trust registry entry is present in an identity assertion, implementations should:
+
+* Identify the governing authority by name and link to the governance framework or trust registry where available.
+* Clearly distinguish the governance trust signal from the cryptographic verification signal — these represent different kinds of assurance.
+* Apply a visual hierarchy that places governance trust signals at an appropriate level of prominence (typically L2 or L3 in progressive disclosure).
+
+When no trust registry entry is present, the identity assertion may still be technically valid and well-formed.
+Implementations must not treat the absence of a trust registry entry as a failure or warning state.
+
+==== Displaying trust evaluation outcomes
+
+An identity assertion may be evaluated against a trust registry and yield one of three outcomes as defined by the https://cawg.io/identity/1.3/[CAWG identity assertion specification]:
+
+Trusted:: The named actor was found in the trust registry and the credential was not revoked at the time of signing.
+Well-formed:: The identity assertion is cryptographically valid but no applicable trust registry entry was found.
+Revoked:: The credential used to sign the identity assertion was revoked at the time of signing.
+
+These outcomes should be communicated to users in plain language.
+The "Trusted" and "Well-formed" outcomes describe the level of assurance established by the credential chain — not an endorsement of the named actor's character or the truthfulness of the content.
+
+NOTE: Trust registry support is introduced in version 1.3 of the CAWG identity assertion specification. Implementations targeting earlier versions of the specification will not have a trust registry field to display.
