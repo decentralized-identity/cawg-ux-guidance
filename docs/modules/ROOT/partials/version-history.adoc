@@ -14,3 +14,8 @@ _This section is non-normative._
 *05 February 2026*
 
 * Ratified by DIF Steering Committee.
+
+*02 July 2026*
+
+* Expanded validation states to define the three trust decision outcomes (Trusted, Well-formed, Revoked) with distinct recommended labels, visual indicator guidance, and a note on the verifier-relative nature of trust.
+* Updated verification indicators to align icon and status label guidance with the three-state model and clarify that Well-formed is not a warning state.
