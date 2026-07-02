@@ -14,3 +14,7 @@ _This section is non-normative._
 *05 February 2026*
 
 * Ratified by DIF Steering Committee.
+
+*02 July 2026*
+
+* Added four-state validation model (Trusted, Well-formed, Validation incomplete, Revoked) to validation states and verification indicators, including the Validation incomplete state for credentials that require network access to validate and where that access was unavailable or blocked.
