@@ -20,3 +20,28 @@ Labels should be concise, localizable, and follow the tone and casing convention
 When identity credentials are revoked, expired, or untrusted, the indicator should shift to a clear warning or neutral state accompanied by a plain-language explanation of the issue.
 Verification indicators must be perceivable to assistive technologies.
 Color alone must not be used to convey meaning.
+
+==== Language guidance
+
+The language used to describe identity verification strongly influences how audiences interpret it.
+Implementations should communicate what was verified and by whom, without implying any judgment about the named actor's intentions or the truthfulness of the content.
+
+[cols="1,1", options="header"]
+|===
+| Avoid | Prefer
+
+| "Trusted creator"
+| "Identity verified by [issuer]"
+
+| "This content is trustworthy"
+| "Signed by a credential associated with [named actor]"
+
+| "Verified content"
+| "Identity verified; content credentials validated"
+
+| "Trusted source"
+| "Credential issued by [issuer]"
+|===
+
+Preferred language names the issuer or verification mechanism and describes what was technically or governmentally validated.
+It avoids claims about content truthfulness or the named actor's reputation, which are outside the scope of what an identity assertion can establish.

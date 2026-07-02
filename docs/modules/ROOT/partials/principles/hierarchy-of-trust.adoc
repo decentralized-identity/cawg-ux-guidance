@@ -1,8 +1,21 @@
 === Hierarchy of trust
 
 Research consistently shows that identity is one of the strongest trust signals audiences look for when evaluating content.
-CAWG identity assertions should be easy to locate, clearly understandable, and visually distinct from other provenance information in a C2PA Manifest. 
+CAWG identity assertions should be easy to locate, clearly understandable, and visually distinct from other provenance information in a C2PA Manifest.
 
 Not all identity assertions hold the same level of verifiability.
 Likewise, not all C2PA implementers will choose to display identity information, even if present in a C2PA Manifest.
 Therefore, verified identities should be surfaced prominently within https://spec.c2pa.org/specifications/specifications/2.0/ux/UX_Recommendations.html#_levels_of_information_disclosure[progressive disclosure interfaces (L1-L3)] and visually differentiated from referenced or self-declared information. Hierarchy within the identity section helps establish clarity and confidence.
+
+==== Three kinds of trust
+
+The https://cawg.io/identity/1.3/[CAWG identity assertion specification] formally distinguishes three kinds of trust that may be relevant when evaluating an identity assertion.
+Implementers should understand these distinctions because they directly affect how identity information should be communicated in a user interface.
+
+Technical trust:: Can the identity assertion consumer verify that the content was signed by a credential associated with the named actor, and that it has not been modified since signing?
+
+Governance trust:: Was the credential issued and managed under rules the identity assertion consumer finds acceptable? Is the credential issuer recognized by a governing authority with a published governance framework, such as a trust registry?
+
+Reputation trust:: Does the identity assertion consumer trust the named actor's intentions and expect them to produce content in good faith? This is inherently subjective and is outside the scope of the CAWG specification.
+
+IMPORTANT: A user interface must communicate only technical and governance trust. Displaying a verified identity does not mean the content is truthful or that the named actor acted in good faith. Implementations that imply reputation trust risk misleading audiences.

@@ -14,3 +14,9 @@ _This section is non-normative._
 *05 February 2026*
 
 * Ratified by DIF Steering Committee.
+
+*02 July 2026*
+
+* Added three-kinds-of-trust framework (technical, governance, reputation) to the hierarchy of trust principle, aligned with §9.1 of the CAWG identity assertion specification v1.3.
+* Added language guidance to verification indicators with wording recommendations that avoid implying reputation trust.
+* Added governance trust and trust registries pattern describing how to display trust registry entries and trust evaluation outcomes (Trusted, Well-formed, Revoked).
