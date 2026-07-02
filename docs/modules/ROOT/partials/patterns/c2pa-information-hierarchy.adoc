@@ -9,8 +9,8 @@ image::patterns/progressive-disclosure.jpg[]
 Identity information should follow the progressive disclosure model established by the https://spec.c2pa.org/specifications/specifications/2.0/ux/UX_Recommendations.html#_levels_of_information_disclosure[C2PA UX progressive disclosure] framework:
 
 * *Level 1 (L1)*: Consideration should be given to displaying organizational identity, whereas individual identity data may be omitted to preserve brevity.
-* *Level 2 (L2)*: Surfaces verified identity with concise attribution and, where space allows, the actor’s primary role.
-* *Level 3 (L3)*: Expands to include detailed verification information, issuer relationships, verification methods, and root-of-trust references.
+* *Level 2 (L2)*: Surfaces the named actor’s identity with concise attribution, the actor’s primary role where space allows, and a summary trust statement naming the credential issuer and — if a trust list is the basis for the trust decision — the trust list as well.
+* *Level 3 (L3)*: Expands to show the full trust path: credential issuer, trust list, verification path from issuer to trust list to viewer trust configuration, revocation status at signing time, and the timestamp against which trust was evaluated. See xref:_explaining_why_an_identity_is_trusted[Explaining why an identity is trusted].
 
 Hierarchy should be applied both across disclosure levels and within the identity section itself, ensuring that verified identities are visually and semantically distinct from referenced ones.
 When multiple actors are associated with an asset, roles and trust levels should determine their order of presentation.

@@ -14,3 +14,8 @@ _This section is non-normative._
 *05 February 2026*
 
 * Ratified by DIF Steering Committee.
+
+*02 July 2026*
+
+* Updated L2 and L3 progressive disclosure descriptions in the C2PA information hierarchy pattern to specify trust-related fields at each level.
+* Added new pattern: Explaining why an identity is trusted, covering the L2 summary trust statement and L3 full trust path with field-level examples and guidance on verifier-relative trust and time of evaluation.
