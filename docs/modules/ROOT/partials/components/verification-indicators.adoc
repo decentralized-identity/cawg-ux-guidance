@@ -5,18 +5,43 @@
 Verification icons are compact visual indicators that represent an actor’s verification state.
 They should appear adjacent to the actor’s name and include accessible text or tooltips describing the credential issuer and verification details.
 
-A visual symbol or label may indicate that a creator’s identity has been verified and should, when space allows, include information about the verification process and verifier.
+Icons must reflect the three distinct validation states defined in xref:_validation_states[Validation states]:
+
+* *Trusted*: use a positive indicator such as a filled checkmark. Include the issuer name in the accessible label or tooltip.
+* *Well-formed*: use a neutral informational indicator. Do not use a checkmark or any symbol that implies the issuer has been trusted. Do not use a warning symbol.
+* *Revoked*: use a warning indicator to signal that the credential is no longer valid.
 
 Unverified identities, such as names manually entered in metadata assertions, must not display a verification symbol.
-These should be grouped and labeled to clearly distinguish verified from unverified identity assertions.
+These should be grouped and labeled to clearly distinguish them from identity assertions that have been evaluated.
+
+Verification indicators must be perceivable to assistive technologies.
+Color alone must not be used to convey meaning.
 
 ==== Status labels
 
-Textual descriptors such as “Verified by [credential issuer]” or “Verification revoked by [credential issuer]” provide immediate clarity.
-Labels should be concise, localizable, and follow the tone and casing conventions used throughout the C2PA UX framework.
+Status labels provide a textual companion to the icon. They should be concise, localizable, and follow the tone and casing conventions used throughout the C2PA UX framework.
+
+Recommended labels for each validation state are defined in xref:_validation_states[Validation states].
+As a reference:
+
+[cols=”1,2”, options=”header”]
+|===
+| State | Recommended label
+
+| Trusted
+| “Identity verified — issuer trusted”
+
+| Well-formed
+| “Identity present — issuer unrecognized”
+
+| Revoked
+| “Identity credential was revoked”
+|===
+
+Labels should name the credential issuer where space allows so users understand the source of the trust decision.
 
 ==== Warning states
 
-When identity credentials are revoked, expired, or untrusted, the indicator should shift to a clear warning or neutral state accompanied by a plain-language explanation of the issue.
-Verification indicators must be perceivable to assistive technologies.
-Color alone must not be used to convey meaning.
+When identity credentials are revoked, expired, or trust-chain issues are detected, the indicator must shift to a warning state accompanied by a plain-language explanation of the issue and, where possible, a link to issuer or verifier details.
+
+A Well-formed outcome is not a warning state and must not be displayed as one. It indicates a limitation of the verifier’s knowledge, not a problem with the identity assertion itself.
