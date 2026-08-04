@@ -30,7 +30,7 @@ As a reference:
 | State | Recommended label
 
 | Trusted
-| “Identity verified — issuer trusted”
+| “Identity verified — issuer recognized”
 
 | Well-formed
 | “Identity present — issuer unrecognized”

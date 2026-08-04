@@ -8,7 +8,7 @@ Implementations must not collapse these into a single "verified" state.
 
 The verifier can trace the identity assertion to an accepted root of trust, and there is no evidence the credential was revoked at the time of signing.
 
-*Recommended label:* "Identity verified — issuer trusted"
+*Recommended label:* "Identity verified — issuer recognized"
 
 Display using a positive visual indicator (for example, a filled checkmark icon).
 When space allows, name the credential issuer so users understand who established the trust relationship.
