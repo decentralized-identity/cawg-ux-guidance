@@ -1,6 +1,58 @@
 === Validation states
 
-Verification status may change over time.
-When validation fails due to credential expiration, issuer revocation, or trust-chain issues, the user interface must present a clear message explaining the current status and, when possible, link to issuer or verifier details.
+Every identity assertion is evaluated and yields one of four outcomes.
+Each outcome requires a distinct visual treatment and user-facing label.
+Implementations must not collapse these into a single "verified" state.
+
+==== Trusted
+
+The verifier can trace the identity assertion to an accepted root of trust, and there is no evidence the credential was revoked at the time of signing.
+
+*Recommended label:* "Identity verified — issuer recognized"
+
+Display using a positive visual indicator (for example, a filled checkmark icon).
+When space allows, name the credential issuer so users understand who established the trust relationship.
+
+NOTE: Trust is relative to the verifier's configured trust lists. The same identity assertion may appear as Trusted in one implementation and Well-formed in another depending on which issuers each verifier recognizes. This relativity should inform how label copy is written — the label confirms what this verifier could establish, not an absolute claim about the named actor.
+
+==== Well-formed
+
+The identity assertion is structurally valid and the signature checks out, but the verifier cannot establish a trusted relationship to the named actor's credential issuer.
+
+*Recommended label:* "Identity present — issuer unrecognized"
+
+Display using a neutral informational indicator.
+A Well-formed assertion must not receive a checkmark or any indicator that implies the issuer has been trusted.
+A Well-formed assertion is not a failure — do not display it as a warning or error.
+
+This is a critical distinction: a named actor may have legitimately signed an assertion using a credential whose issuer is simply not on the verifier's trust list.
+The UX should communicate the limitation of the verifier's knowledge, not cast doubt on the named actor.
+
+==== Validation incomplete
+
+The credential requires outbound network access to complete validation — for example, to resolve a DID document or check revocation status — and that access was unavailable or blocked by the validator's policy.
+This corresponds to the `cawg.identity.network_traffic_blocked` status code defined in the https://cawg.io/identity/1.3/[CAWG identity assertion specification].
+
+*Recommended label:* "Identity could not be verified — network access required"
+
+Display using a neutral informational indicator, the same visual treatment as Well-formed.
+Do not display this as a warning or failure state.
+Accompany the label with a secondary explanation such as: "This credential requires an external check that could not be completed in this environment."
+
+This state reflects a limitation of the validation environment, not a problem with the credential or the named actor.
+The same credential may resolve as Trusted or Well-formed in an environment where the required network access is available.
+
+==== Revoked
+
+The credential used to sign the identity assertion was revoked at the time the assertion was created.
+
+*Recommended label:* "Identity credential was revoked"
+
+Display using a warning indicator and accompany the label with a plain-language explanation.
+Where possible, link to the issuer or verifier details so users can investigate further.
+Absent specific information about the reason for revocation, the UI should not characterize the revocation as an indication of bad faith.
+
+==== General guidance
 
 Messages should use plain language and appear within the context of the identity section rather than as a global error.
+Verification status may change over time as credentials expire or trust lists are updated; implementations should be prepared to re-evaluate and update the displayed state accordingly.
